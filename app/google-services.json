@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1006587119647",
+    "firebase_url": "https://angkot-on-the-way.firebaseio.com",
+    "project_id": "angkot-on-the-way",
+    "storage_bucket": "angkot-on-the-way.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006587119647:android:f2af83e9337cf396",
+        "android_client_info": {
+          "package_name": "org.d3ifcool.angkotontheway"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006587119647-8nhbbsks4lam4agdd2fjo1q8fguasf7a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.d3ifcool.angkotontheway",
+            "certificate_hash": "92d7c524ac6da75558b2c9ac953857cdd70a1073"
+          }
+        },
+        {
+          "client_id": "1006587119647-ideltthij5g52fncq9pkijd92p48m9go.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC9ygdLavwHE8fYFapYUoI3B5zYCb_9bI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006587119647-ideltthij5g52fncq9pkijd92p48m9go.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

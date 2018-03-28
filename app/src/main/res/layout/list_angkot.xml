@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="16dp">
+    <ImageView
+        android:id="@+id/gambar"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
+        tools:src="@drawable/angkot1"/>
+        <TextView
+            android:id="@+id/rute"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            tools:hint="Abdul Muis (Kebon Kelapa) - Cicaheum via Binong"
+            android:layout_gravity="center"/>
+</LinearLayout>
