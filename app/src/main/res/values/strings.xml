@@ -6,7 +6,7 @@
     <string name="registration">registration</string>
     <string name="i_m_a_driver">I\'m a Driver</string>
     <string name="i_m_a_customer">I\'m a Customer</string>
-    <string name="title_activity_driver_map">Map</string>
+    <string name="title_activity_driver_map">Angkot On the Way</string>
     <string name="logout">Logout</string>
     <string name="title_activity_drawer">DrawerActivity</string>
 
@@ -23,6 +23,8 @@
     <string name="jurusan_angkot">Jurusan Angkot</string>
     <string name="rute_awal">Rute Awal</string>
     <string name="rute_akhir">Rute Akhir</string>
+    <string name="toggle_gps_off">GPS Off</string>
+    <string name="toggle_gps_on">GPS On</string>
 
 
 </resources>

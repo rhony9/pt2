@@ -18,6 +18,9 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.d3ifcool.angkotontheway.Common.Common;
+import org.d3ifcool.angkotontheway.Model.Customer;
+
 
 public class CustomerLoginActivity extends AppCompatActivity {
 
@@ -26,12 +29,16 @@ public class CustomerLoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
+    FirebaseDatabase mDb;
+    DatabaseReference users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_login);
 
         mAuth = FirebaseAuth.getInstance();
+        mDb = FirebaseDatabase.getInstance();
+        users = mDb.getReference(Common.user_customer_tbl);
 
         firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -74,7 +81,10 @@ public class CustomerLoginActivity extends AppCompatActivity {
                         .addOnCompleteListener(CustomerLoginActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-
+                                //save to firebase db
+                                Customer customer = new Customer();
+                                customer.setEmail(mEmail.getText().toString());
+                                customer.setPassword(mPassword.getText().toString());
                                 // If sign in fails, display a message to the user. If sign in succeeds
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.

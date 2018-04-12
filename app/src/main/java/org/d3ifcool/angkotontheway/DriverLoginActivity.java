@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.TileOverlay;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -18,20 +19,30 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.d3ifcool.angkotontheway.Common.Common;
+
 import java.sql.Driver;
 
 public class DriverLoginActivity extends AppCompatActivity {
     private EditText mEmail, mPassword;
-    private Button mLogin, mRegistration;
 
     private FirebaseAuth mAuth;
+    private FirebaseDatabase mDb;
+
+    private DatabaseReference users;
+
     private FirebaseAuth.AuthStateListener firebaseAuthListener;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_login);
 
         mAuth = FirebaseAuth.getInstance();
+        //init Firebase
+        mDb = FirebaseDatabase.getInstance();
+        users = mDb.getReference(Common.user_driver_tbl);
 
         firebaseAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -48,9 +59,10 @@ public class DriverLoginActivity extends AppCompatActivity {
         mEmail = (EditText) findViewById(R.id.email);
         mPassword = (EditText) findViewById(R.id.password);
 
-        mLogin = (Button) findViewById(R.id.login);
-        mRegistration = (Button) findViewById(R.id.registration);
+        Button mLogin = (Button) findViewById(R.id.login);
+        Button mRegistration = (Button) findViewById(R.id.registration);
 
+        //registration
         mRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,10 +91,10 @@ public class DriverLoginActivity extends AppCompatActivity {
                                 // the auth state listener will be notified and logic to handle the
                                 // signed in user can be handled in the listener.
                                 if (!task.isSuccessful()) {
-                                    Toast.makeText(DriverLoginActivity.this,
-                                            getString(R.string.no_connection),
+                                    Toast.makeText(DriverLoginActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
+                                    Toast.makeText(getApplicationContext(),"Registrasi Berhasil", Toast.LENGTH_SHORT).show();
                                     startActivity(new Intent(DriverLoginActivity.this,
                                             DriverMapActivity.class));
                                     finish();

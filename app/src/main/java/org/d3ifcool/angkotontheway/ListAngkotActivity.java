@@ -1,7 +1,6 @@
 package org.d3ifcool.angkotontheway;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -71,12 +70,12 @@ public class ListAngkotActivity extends AppCompatActivity {
 
                 //Toast.makeText(ListAngkotActivity.this, xStart, Toast.LENGTH_LONG).show();
 
-                Intent no1 = new Intent(ListAngkotActivity.this, CustomerMapActivity.class);
-                no1.putExtra("extraRoute", xRoute);
-                no1.putExtra("extraImage", xImage);
-                no1.putExtra("extraStart", xStart);
-                no1.putExtra("extraEnd", xEnd);
-                startActivity(no1);
+                Intent intent = new Intent(ListAngkotActivity.this, CustomerMapActivity.class);
+                intent.putExtra("extraRoute", xRoute);
+                intent.putExtra("extraImage", xImage);
+                intent.putExtra("extraStart", xStart);
+                intent.putExtra("extraEnd", xEnd);
+                startActivity(intent);
 
             }
 
